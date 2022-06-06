@@ -30,6 +30,7 @@ const myTheme = {
     ...DefaultTheme.colors,
     background: '#fff',
   }
+
 }
 
 function App() {
