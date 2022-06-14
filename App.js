@@ -90,7 +90,7 @@ function App() {
 
       </Stack.Navigator>
 
-      <FlashMessage position="top" duration={3000} icon="auto" statusBarHeight={30} />
+      <FlashMessage position="bottom" duration={3000} icon="auto" statusBarHeight={30} />
     </NavigationContainer>
   );
 }

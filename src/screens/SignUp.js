@@ -9,12 +9,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from '../../App';
 import {
   addDoc,
-  collection,
-  getDoc,
-  doc,
-  onSnapshot,
-  query,
-  where
+  collection
 } from 'firebase/firestore';
 import { showMessage } from 'react-native-flash-message';
 
@@ -65,7 +60,7 @@ export default function SignUp({ navigation }) {
         <Input placeholder="Full Name" onChangeText={(text) => setName(text)} autoCapitalize={"words"} />
         <Input placeholder="Age" onChangeText={(text) => setAge(text)} />
         <Text style={{ marginVertical: 10 }}> Select Gender</Text>
-        <RadioInput option={['Male', 'Female']} gender={gender} setGender={setGender} />
+        <RadioInput options={['Male', 'Female']} select={gender} setSelect={setGender} />
         <Button customStyle={{ marginTop: 20 }} onPress={googleSignUp}>{loginLoading ? <ActivityIndicator size={13.1} color="#fff" /> : 'Sign Up'} </Button>
       </View>
       <Footer>

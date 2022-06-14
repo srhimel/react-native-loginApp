@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View, Pressable, Animated } from 'react-native'
 import React from 'react'
 
-export default function RadioInput({ option, gender, setGender }) {
+export default function RadioInput({ options, select, setSelect }) {
 
   return (
-    option.map((item, index) => {
-      const selected = gender === item;
+    options.map((item, index) => {
+      const selected = select === item;
       return (
-        <Pressable key={index} onPress={() => setGender(item)} style={styles.radioContainer}>
+        <Pressable key={index} onPress={() => setSelect(item)} style={styles.radioContainer}>
           <Animated.View style={[styles.outerCircle, selected && styles.selectedOuterCircle]}>
             <Animated.View style={[styles.innerCircle, selected && styles.selectedInnerCircle]} />
           </Animated.View>

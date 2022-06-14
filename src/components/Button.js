@@ -1,11 +1,11 @@
-import { StyleSheet, Text, Pressable, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, Pressable, TouchableOpacity, View, ActivityIndicator } from 'react-native'
 import React from 'react'
 
-export default function Button({ children, onPress, customStyle }) {
+export default function Button({ children, onPress, customStyle, loading }) {
   return (
     <View style={{ marginTop: 30 }}>
       <TouchableOpacity onPress={onPress} style={[styles.button, customStyle]}>
-        <Text style={{ color: '#fff', textAlign: 'center' }}> {children}</Text>
+        <Text style={{ color: '#fff', textAlign: 'center' }}>  {loading ? <ActivityIndicator size={13.1} color="#fff" /> : children}</Text>
       </TouchableOpacity>
     </View>
   )
